@@ -1,0 +1,40 @@
+﻿@model KitapProje.Models.Kitap
+
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+
+<h2>KitapEkle</h2>
+<br />
+<form class="form-group" method="post">
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.AD)
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    </div>
+
+
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.YAZAR)
+        @Html.TextBoxFor(x => x.YAZAR, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.SAYFA)
+        @Html.TextBoxFor(x => x.SAYFA, new { @class = "form-control" })
+    </div>
+    @*<div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.KATEGORİNO)
+        @Html.TextBoxFor(x => x.KATEGORİNO, new { @class = "form-control" })
+    </div>*@
+    <div>
+        <label>Kategori Seçiniz:</label>
+        @Html.DropDownListFor(m=>m.Kategori.KATEGORİAD,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control" })
+    </div>
+    <br />
+    <button class="btn btn-info"id=" btn1">KAYDET</button>
+    <script>
+        $('#btn1').click(function () {
+            alert('Yeni Kitap Eklendi');
+        });
+    </script>
+</form>

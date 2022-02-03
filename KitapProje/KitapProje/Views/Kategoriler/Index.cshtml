@@ -1,0 +1,23 @@
+﻿@using KitapProje.Models
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ</th>
+    </tr>
+    <tbody>
+        @foreach(var ktg in Model)
+            {
+                <tr>
+                    <td>@ktg.ID</td>
+                    <td>@ktg.KATEGORİAD</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

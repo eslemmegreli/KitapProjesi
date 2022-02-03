@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbKitapModelStoreContainer" CdmEntityContainer="DbKitapEntities1">
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="DbKitapModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KATEGORİAD" ColumnName="KATEGORİAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitap">
+      <EntityTypeMapping TypeName="DbKitapModel.Kitap">
+        <MappingFragment StoreEntitySet="Kitap">
+          <ScalarProperty Name="KİTAPID" ColumnName="KİTAPID" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SAYFA" ColumnName="SAYFA" />
+          <ScalarProperty Name="YAZAR" ColumnName="YAZAR" />
+          <ScalarProperty Name="KATEGORİNO" ColumnName="KATEGORİNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

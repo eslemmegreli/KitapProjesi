@@ -1,0 +1,36 @@
+﻿@using KitapProje.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Kitap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Sayfa Sayısı</th>
+        <th>Tür</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+<tr>
+    <td>@x.KİTAPID</td>
+    <td>@x.AD</td>
+    <td>@x.YAZAR</td>
+    <td>@x.SAYFA</td>
+    <td>@x.Kategori.KATEGORİAD</td>
+    <td><a href="/Kitap/KitapSil/@x.KİTAPID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Kitap/KitapGetir/@x.KİTAPID" class="btn btn-warning">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa }))
+<a href="/Kitap/KitapEkle" class="btn btn-primary">Yeni Kitap</a>
+

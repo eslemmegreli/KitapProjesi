@@ -1,0 +1,31 @@
+﻿@model KitapProje.Models.Kitap
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+  
+        <div style="margin-bottom:15px">
+            @Html.HiddenFor(y=>y.KİTAPID)
+            @Html.LabelFor(x => x.AD)
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+        </div>
+
+
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.YAZAR)
+            @Html.TextBoxFor(x => x.YAZAR, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.SAYFA)
+            @Html.TextBoxFor(x => x.SAYFA, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.KATEGORİNO)
+            @Html.TextBoxFor(x => x.KATEGORİNO, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-success">Güncelle</button>
+        }
+
